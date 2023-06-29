@@ -53,7 +53,7 @@ public class ClientController {
 	public String modifierClient(@ModelAttribute("client") Client c, @PathVariable("id") int id)
 	{
 		icr.save(c);
-		
+		// 
 		return "redirect:/listeClient";
 	}
 	
@@ -61,7 +61,7 @@ public class ClientController {
 	public String deleteClient(@PathVariable("id") int id)
 	{
 		icr.delete(icr.getReferenceById(id));
-		
+		// dzhjqs //
 		return "redirect:/listeClient";
 	}
 

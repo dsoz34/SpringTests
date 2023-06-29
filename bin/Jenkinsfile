@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // To run Maven on a Windows agent, use
-                bat "mvn clean package !!"
+                bat "mvn clean package"
             }
 
             post {
@@ -35,20 +35,4 @@ pipeline {
         }
         
     }
-    
-    post {
-    	always {
-    		echo "build terminé !"
-    		}
-    	success{
-    		echo "succes de toutes les étapes"
-    	}
-    	failure{
-    		mail to : "productowner@test.fr",
-    			subject : "Echec build", 
-    			body : "Vérifier les test"
-    	}
-    }
-    
-    
 }
